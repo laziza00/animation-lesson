@@ -10,6 +10,142 @@ body {
   background-color: #fff;
   min-height: 100vh;
   display: flex;
+  font-family: Arial, Helvetica, sans-serif;
   flex-direction: column;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  background-color: #000;
 }
 
+.content{
+  padding: 10px;
+  margin: 0 auto;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.box{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  border-radius: 5px;
+}
+.red{
+  background-color: #ff0506;
+  transform: translate(0, 0);
+}
+.green{
+  background-color: #068304;
+  transform: translate(100px, 0);
+}
+.blue{
+  background-color: #0403ff;
+  transform: translate(0, 100px);
+}
+.yellow{
+  background-color: #ffff03;
+  transform: translate(100px, 100px);
+}
+
+
+.red{
+  animation: anim-red 4s infinite both;
+  transition: all 0.4 ease;
+}
+.green{
+  animation: anim-green 4s infinite both;
+}
+.blue{
+  animation: anim-blue 4s infinite both;
+}
+.yellow{
+  animation: anim-yellow 4s infinite both;
+}
+
+@keyframes anim-red{
+  0%{
+    transform: translate(0,0);
+  }
+  25%{
+    transform: translate(100px, 0);
+  }
+  50%{
+    transform: translate(100px, 100px);
+  }
+  75%{
+    transform: translate(0, 100px);
+  }
+  100%{
+    transform: translate(0, 0);
+  }
+}
+@keyframes anim-green{
+  0%{
+    transform: translate(100px, 0);
+  }
+  25%{
+    transform: translate(100px, 100px);
+  }
+  50%{
+    transform: translate(0, 100px);
+  }
+  75%{
+    transform: translate(0, 0);
+  }
+  100%{
+    transform: translate(100px, 0);
+  }
+}
+
+@keyframes anim-blue{
+  0%{
+    transform: translate(100px, 100px);
+  }
+  25%{
+    transform: translate(0, 100px);
+  }
+  50%{
+    transform: translate(0, 0);
+  }
+  75%{
+    transform: translate(100px, 0);
+  }
+  100%{
+    transform: translate(100px, 100px);
+  }
+}
+@keyframes anim-yellow{
+  0%{
+    transform: translate(0, 100px);
+  }
+  25%{
+    transform: translate(0, 0);
+  }
+  50%{
+    transform: translate(100px, 0);
+  }
+  75%{
+    transform: translate(100px, 100px);
+  }
+  100%{
+    transform: translate(0, 100px);
+  }
+}
+
+
+
+.load{
+  position: absolute;
+  top: 75%;
+  left: 52.5%;
+  transform: translate(-75%, -52.5%);
+  font-size: 50px;
+  color: #fff;
+}
